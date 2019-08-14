@@ -1,4 +1,4 @@
-# Coached by Luigi van der Pal / Paratroopers.nl - how to add basic user profile to django admin -
+# Coached by Luigi van der Pal / Paratroopers.nl - how to add basic user profile to django admin - and googled tutorials
 
 from django.contrib import admin
 

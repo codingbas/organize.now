@@ -1,6 +1,7 @@
 from django.conf.urls import url, include
-from accounts.views import logout, login, registration, user_profile
+from accounts.views import logout, login, registration, user_profile, index
 from accounts import url_reset
+from django.contrib import admin
 
 urlpatterns = [
     url(r'^logout/', logout, name="logout"),
