@@ -1,1 +1,4 @@
 *.requirements.txt/
+env.py
+db.sqlite3
+__pyache__
