@@ -20,4 +20,4 @@ def index(request): #the index view
             for todo_id in checkedlist:
                 todo = TodoList.objects.get(id=int(todo_id)) #getting todo id
                 todo.delete() #deleting todo
-    return render(request, "index.html", {"todos": todos, "categories":categories})
+    return render(request, "todolist.html", {"todos": todos, "categories":categories})

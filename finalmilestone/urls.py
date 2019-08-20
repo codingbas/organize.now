@@ -24,9 +24,11 @@ from checkout import urls as urls_checkout
 from products.views import all_products
 from django.views import static
 from .settings import MEDIA_ROOT
+from todolist.views import index
 
 urlpatterns = [
     url(r'^admin/', admin.site.urls),
+    url(r'^$', index, name="TodoList"),
     url(r'^$', all_products, name='index'),
     url(r'^accounts/', include(urls_accounts)),
     url(r'^products/', include(urls_products)),
