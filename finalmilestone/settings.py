@@ -42,7 +42,7 @@ INSTALLED_APPS = [
     'accounts',
     'home',
     'dashboard',
-    'todos',
+    'todolist',
     'products',
     'cart',
     'checkout',
