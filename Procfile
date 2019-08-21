@@ -1,1 +1,1 @@
-web: gunicorn organizenow.wsgi:application
+web: gunicorn finalmilestone.wsgi:application
