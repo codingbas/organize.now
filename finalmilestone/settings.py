@@ -12,7 +12,7 @@ https://docs.djangoproject.com/en/1.11/ref/settings/
 
 import os
 import dj_database_url
-#import env
+import env
 
 # Build paths inside the project like this: os.path.join(BASE_DIR, ...)
 BASE_DIR = os.path.dirname(os.path.dirname(os.path.abspath(__file__)))
@@ -25,10 +25,9 @@ BASE_DIR = os.path.dirname(os.path.dirname(os.path.abspath(__file__)))
 SECRET_KEY = os.environ.get('SECRET_KEY')
 
 # SECURITY WARNING: don't run with debug turned on in production!
-DEBUG = True
+DEBUG = False
 
-ALLOWED_HOSTS = ['56330d9b4b6248a68260016318abe668.vfs.cloud9.us-east-1.amazonaws.com',
-'organizenow.herokuapp.com']
+ALLOWED_HOSTS = ['56330d9b4b6248a68260016318abe668.vfs.cloud9.us-east-1.amazonaws.com','organizenow.herokuapp.com']
 
 
 # Application definition
@@ -96,7 +95,7 @@ WSGI_APPLICATION = 'finalmilestone.wsgi.application'
 
 if "DATABASE_URL" in os.environ:
     DATABASES = {
-    'default': dj_database_url.parse("postgres://plzrykbcetfdyb:b694113d8a9ccede9fbf5cbfc711b7617f7c0f6dde1c72c9eebceb161f424627@ec2-79-125-126-205.eu-west-1.compute.amazonaws.com:5432/d5gfgu88sto9sj")
+    'default': dj_database_url.parse(os.environ['DATABASE_URL'])
     }
 else:
     print("Database URL not found. Using SQLite instead")
