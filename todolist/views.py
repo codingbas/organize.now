@@ -1,9 +1,13 @@
 # Create your views here. 
 # This codesnippet is from https://medium.com/fbdevclagos/how-to-build-a-todo-app-with-django-17afdc4a8f8c 
 
-from django.shortcuts import render,redirect
+from django.shortcuts import render,redirect, reverse
 from .models import TodoList, Category
+
 def index(request): #the index view
+    #redirect of not authenticated
+    if not request.user.is_authenticated():
+        return redirect(reverse('login'))
     todos = TodoList.objects.all() #quering all todos with the object manager
     categories = Category.objects.all() #getting all categories with object manager
     if request.method == "POST": #checking if the request method is a POST
@@ -21,3 +25,4 @@ def index(request): #the index view
                 todo = TodoList.objects.get(id=int(todo_id)) #getting todo id
                 todo.delete() #deleting todo
     return render(request, "todolist.html", {"todos": todos, "categories":categories})
+    
