@@ -11,7 +11,8 @@ https://docs.djangoproject.com/en/1.11/ref/settings/
 """
 
 import os
-import env
+import dj_database_url
+#import env
 
 # Build paths inside the project like this: os.path.join(BASE_DIR, ...)
 BASE_DIR = os.path.dirname(os.path.dirname(os.path.abspath(__file__)))
@@ -85,13 +86,25 @@ WSGI_APPLICATION = 'finalmilestone.wsgi.application'
 # Database
 # https://docs.djangoproject.com/en/1.11/ref/settings/#databases
 
-DATABASES = {
+# DATABASES = {
+#    'default': {
+#        'ENGINE': 'django.db.backends.sqlite3',
+#       'NAME': os.path.join(BASE_DIR, 'db.sqlite3'),
+#   }
+#}
+
+if "DATABASE_URL" in os.environ:
+    DATABASES = {
+    'default': dj_database_url.parse("postgres://plzrykbcetfdyb:b694113d8a9ccede9fbf5cbfc711b7617f7c0f6dde1c72c9eebceb161f424627@ec2-79-125-126-205.eu-west-1.compute.amazonaws.com:5432/d5gfgu88sto9sj")
+    }
+else:
+    print("Database URL not found. Using SQLite instead")
+    DATABASES = {
     'default': {
         'ENGINE': 'django.db.backends.sqlite3',
         'NAME': os.path.join(BASE_DIR, 'db.sqlite3'),
+        }
     }
-}
-
 
 # Password validation
 # https://docs.djangoproject.com/en/1.11/ref/settings/#auth-password-validators
