@@ -7,6 +7,22 @@
 {% block page_heading %}User Login{% endblock %}
 
 {% block content %}
+
+<div class="row">
+    <div class="col-md-12 text-center dashboard-heading">
+        <p>The smart app for busy people. Your life deserves this.</p>
+
+    <!-- Checking if user has a premium account -->
+        {% if account == 'pro' %}
+        <p>Welcome <a href="{% url 'profile' %}" title="View your Profile">{{ username }}</a> you have a premium account</p>
+        {% else %}
+        <p>Welcome <a href="{% url 'profile' %}" title="View your Profile">{{ username }}</a> this is your trial version. You can make a total of 10 Todo's. You can buy the premium version for unlimited Todo's !</p>
+
+        <a href="{% url 'checkout' %}" class="btn btn-default custom-button new-save-button"><i class="material-icons page-icon left"></i>Buy Premium!</a> {% endif %}
+        
+    </div>
+</div>
+<br>
 <div class="container todo-prefix">
     <div class="content">
         <h1>TodoApp</h1>
