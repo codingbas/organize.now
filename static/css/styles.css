@@ -206,7 +206,10 @@ body {
     display: block;
     position: absolute;
 }
+.todo-prefix a,
 .todo-prefix button {
+    display: inline-block;
+    line-height: 49px;
     font-family: 'Open Sans', sans-serif;
     background: transparent;
     border-radius: 2px;

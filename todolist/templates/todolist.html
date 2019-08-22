@@ -18,7 +18,7 @@
         {% else %}
         <p>Welcome <a href="{% url 'profile' %}" title="View your Profile">{{ username }}</a> this is your trial version. You can make a total of 10 Todo's. You can buy the premium version for unlimited Todo's !</p>
 
-        <a href="{% url 'checkout' %}" class="btn btn-default custom-button new-save-button"><i class="material-icons page-icon left"></i>Buy Premium!</a> {% endif %}
+        {% endif %}
         
     </div>
 </div>
@@ -53,6 +53,7 @@
                 <button class="taskAdd" name="taskAdd" type="submit"><i class="fa fa-plus icon"></i>Add task</button>
                 <button class="taskDelete" name="taskDelete" formnovalidate="" type="submit"
                     onclick="$('input#sublist').click();"><i class="fa fa-trash-o icon"></i>Delete Tasks</button>
+                <a href="{% url 'checkout' %}" class="taskAdd"><i class="fa fa-plus icon"></i>Buy Premium!</a> 
             </div>
             <ul class="taskList">
                 {% for todo in todos %}
