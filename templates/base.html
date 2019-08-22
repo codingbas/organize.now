@@ -42,9 +42,7 @@
                         <li>
                             <a href="{% url 'checkout' %}">
                                 <i class="fa fa-shipping-cart"></i>Buy Premium
-                                {% if product_count > 0 %}
-                                <label class="badge badge-warning">{{ product_count }}</label>
-                                {% endif %}
+                                
                             </a>
                         </li>
                     </ul>
@@ -66,9 +64,9 @@
         {% block content %} {% endblock %}
     </div>
     <footer>
-        <div class="container">
-            <div class="col-md-12 text-center dashboard-heading">
-            <p>Made with love by Codingbas</p>
+        <div class="row">
+            <div class="col-xs-12 col-sm-12 col-md-12 col-lg-12 text-center">
+                <p id="copyright">Designed by codingbas <a target="_blank" href="https://github.com/codingbas?tab=repositories"><i class="fa fa-github fa-lg github"></i></a></p>
             </div>
         </div>
     </footer>

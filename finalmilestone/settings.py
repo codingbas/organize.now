@@ -45,7 +45,6 @@ INSTALLED_APPS = [
     'dashboard',
     'todolist',
     'products',
-    'cart',
     'checkout',
 ]
   
@@ -73,9 +72,8 @@ TEMPLATES = [
                 'django.template.context_processors.debug',
                 'django.template.context_processors.request',
                 'django.contrib.auth.context_processors.auth',
-                'django.contrib.messages.context_processors.messages',
                 'django.template.context_processors.media',
-                'cart.contexts.cart_contents'
+                'django.contrib.messages.context_processors.messages',
             ],
         },
     },

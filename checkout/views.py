@@ -22,7 +22,6 @@ def checkout(request):
             order.date = timezone.now()
             order.save()
 
-            cart = request.session.get('cart', {})
             total = 25
             
             try:
@@ -37,7 +36,6 @@ def checkout(request):
             
             if customer.paid:
                 messages.error(request, "You have successfully paid")
-                request.session['cart'] = {}
                 return redirect(reverse('products'))
             else:
                 messages.error(request, "Unable to take payment")
