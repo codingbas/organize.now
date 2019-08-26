@@ -17,9 +17,7 @@ Including another URLconf
 from django.conf.urls import url, include
 from django.contrib import admin
 from accounts import urls as urls_accounts
-from products import urls as urls_products
-from checkout import urls as urls_checkout
-from products.views import all_products
+from payments import urls as urls_payments
 from django.views import static
 from .settings import MEDIA_ROOT
 from todolist.views import index
@@ -27,9 +25,7 @@ from todolist.views import index
 urlpatterns = [
     url(r'^admin/', admin.site.urls),
     url(r'^$', index, name="TodoList"),
-    url(r'^$', all_products, name='index'),
     url(r'^accounts/', include(urls_accounts)),
-    url(r'^products/', include(urls_products)),
-    url(r'^checkout/', include(urls_checkout)),
+    url(r'^payments/', include(urls_payments)),
     url(r'^media/(?P<path>.*)$', static.serve, {'document_root': MEDIA_ROOT})
 ]

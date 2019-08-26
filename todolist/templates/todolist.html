@@ -53,7 +53,7 @@
                 <button class="taskAdd" name="taskAdd" type="submit"><i class="fa fa-plus icon"></i>Add task</button>
                 <button class="taskDelete" name="taskDelete" formnovalidate="" type="submit"
                     onclick="$('input#sublist').click();"><i class="fa fa-trash-o icon"></i>Delete Tasks</button>
-                <a href="{% url 'checkout' %}" class="taskAdd"><i class="fa fa-plus icon"></i>Buy Premium!</a> 
+                <a href="{% url 'create_payment' %}" class="taskAdd"><i class="fa fa-plus icon"></i>Buy Premium!</a> 
             </div>
             <ul class="taskList">
                 {% for todo in todos %}
