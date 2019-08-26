@@ -91,7 +91,7 @@ WSGI_APPLICATION = 'finalmilestone.wsgi.application'
 
 if "DATABASE_URL" in os.environ:
     DATABASES = {
-    'default': dj_database_url.parse(os.environ['DATABASE_URL'])
+    'default': os.environ['DATABASE_URL']
     }
 else:
     print("Database URL not found. Using SQLite instead")
@@ -163,10 +163,14 @@ AUTHENTICATION_BACKENDS = [
 MEDIA_ROOT = os.path.join(BASE_DIR, 'media')
 MEDIA_URL = '/media/'
 
-STRIPE_PUBLISHABLE = os.getenv('STRIPE_PUBLISHABLE')
-STRIPE_SECRET = os.getenv('STRIPE_SECRET')
-
 # Simplified static file serving.
 # https://warehouse.python.org/project/whitenoise/
 
 STATICFILES_STORAGE = 'whitenoise.storage.CompressedManifestStaticFilesStorage'
+
+# Stripe
+STRIPE_SECRET_KEY = 'sk_test_k6s83iF236Muf0bLqpZRcFyk00YVsQYpY1'
+STRIPE_PUBLISHABLE_KEY = 'pk_test_vrH1MDvO8Onmd630CsvJu3jy008Y87OVR1'
+
+
+	

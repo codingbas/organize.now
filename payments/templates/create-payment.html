@@ -2,17 +2,15 @@
 
 {% load bootstrap_tags %}
 
-{% block page_title %}Create Payment{% endblock %}
-
-{% block page_heading %}Create Payment{% endblock %}
-
 {% block content %}
-<h2>Buy for $5.00</h2>
-
-<script src="https://checkout.stripe.com/checkout.js" class="stripe-button"
-    data-key="{{ key }}"
-    data-description="A Django Charge"
-    data-amount="500"
-    data-locale="auto">
-</script>
+    <h2>Buy for €30.00</h2>
+    <form action="{% url 'charge' %}" method="post">
+        {% csrf_token %}
+        <script src="https://checkout.stripe.com/checkout.js" class="stripe-button"
+              data-key="{{ stripe_id }}"
+              data-description="Go for Premium!"
+              data-amount="3000"
+              data-currency="eur"
+              data-locale="auto"></script>
+    </form>
 {% endblock %}
