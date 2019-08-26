@@ -65,4 +65,4 @@ def registration(request):
 def user_profile(request):
     """The user's profile page"""
     user = User.objects.filter(email=request.user.email).first()
-    return render(request, 'profile.html', {"profile": user})
+    return render(request, 'profile.html', {"user": user})

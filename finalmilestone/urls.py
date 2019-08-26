@@ -24,7 +24,7 @@ from todolist.views import index
 
 urlpatterns = [
     url(r'^admin/', admin.site.urls),
-    url(r'^$', index, name="TodoList"),
+    url(r'^$', index, name="index"),
     url(r'^accounts/', include(urls_accounts)),
     url(r'^payments/', include(urls_payments)),
     url(r'^media/(?P<path>.*)$', static.serve, {'document_root': MEDIA_ROOT})

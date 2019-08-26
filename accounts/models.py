@@ -6,15 +6,16 @@ from django.dispatch import receiver
 
 # USER'S PROFILE:
 class UserProfile(models.Model):
-
     user = models.OneToOneField(User, on_delete=models.CASCADE)
+    is_premium = models.BooleanField(default=False)
+
 
 
 @receiver(post_save, sender=User)
-def create_or_update_user_profile(sender, instance, created, **kwargs):
-    """
-    Create a user profile for all new users
-    """
+def create_user_profile(sender, instance, created, **kwargs):
     if created:
         UserProfile.objects.create(user=instance)
-    instance.userprofile.save()  
+
+@receiver(post_save, sender=User)
+def save_user_profile(sender, instance, **kwargs):
+    instance.userprofile.save()
