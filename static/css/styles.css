@@ -388,8 +388,7 @@ a
     padding: 0 100px;
 }
 
-#back-to-top {
-    display: none;
+.back-to-top {
     position: fixed;
     bottom: 1.25rem;
     right: 1.875rem;

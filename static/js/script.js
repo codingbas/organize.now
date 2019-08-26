@@ -1,17 +1,20 @@
-// Stack Overflow back to top button functionality
+// Stack Overflow back to top button functionality and Luigi van der Pal 
 // When the user scrolls down 75px from the top of the document, show the button
-window.onscroll = function() {scrollFunction()};
-
 function scrollFunction() {
   if (document.body.scrollTop > 75 || document.documentElement.scrollTop > 75) {
-    document.getElementById("back-to-top").style.display = "block";
+    backToTopButton.classList.remove("hidden");
   } else {
-    document.getElementById("back-to-top").style.display = "none";
+    backToTopButton.classList.add("hidden");
   }
 }
-
 // When the user clicks on the button, scroll to the top of the document
 function topFunction() {
   document.body.scrollTop = 0;
   document.documentElement.scrollTop = 0;
 }
+
+var backToTopButton = document.getElementById("js-back-to-top");
+
+scrollFunction();
+window.onscroll = scrollFunction;
+backToTopButton.addEventListener('click', topFunction);
