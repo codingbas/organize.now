@@ -11,15 +11,12 @@
 <div class="row">
     <div class="col-md-12 text-center dashboard-heading">
         <p>The smart app for busy people. Your life deserves this.</p>
-
-    <!-- Checking if user has a premium account -->
-        {% if account == 'pro' %}
-        <p>Welcome <a href="{% url 'profile' %}" title="View your Profile">{{ username }}</a> you have a premium account</p>
+        <!-- Checking if user has a premium account -->
+        {% if user.userprofile.is_premium  %}
+            <p>Welcome <a href="{% url 'profile' %}" title="View your Profile">{{ user.username }}</a> you have a premium account</p>
         {% else %}
-        <p>Welcome <a href="{% url 'profile' %}" title="View your Profile">{{ username }}</a> this is your trial version. You can make a total of 10 Todo's. You can buy the premium version for unlimited Todo's !</p>
-
+            <p>Welcome <a href="{% url 'profile' %}" title="View your Profile">{{ user.username }}</a> this is your trial version. You can make a total of 10 Todo's. You can buy the premium version for unlimited Todo's</p>
         {% endif %}
-        
     </div>
 </div>
 <br>
@@ -49,12 +46,6 @@
                 <input type="date" id="dueDate" class="taskDate" name="date">
                 <label for="dueDate">Due Date</label>
             </div>
-            <div class="row">
-                <button class="taskAdd" name="taskAdd" type="submit"><i class="fa fa-plus icon"></i>Add task</button>
-                <button class="taskDelete" name="taskDelete" formnovalidate="" type="submit"
-                    onclick="$('input#sublist').click();"><i class="fa fa-trash-o icon"></i>Delete Tasks</button>
-                <a href="{% url 'create' %}" class="taskAdd"><i class="fa fa-plus icon"></i>Buy Premium!</a> 
-            </div>
             <ul class="taskList">
                 {% for todo in todos %}
                 <!-- django template lang - for loop -->
@@ -67,7 +58,19 @@
                         {{ todo.due_date }}</strong>
                 </li>
                 {% endfor %}
+                
             </ul><!-- taskList -->
+                        <div class="row">
+                {% if show_premium_message == False %}
+                    <button class="taskAdd" name="taskAdd" type="submit"><i class="fa fa-plus icon"></i>Add task</button>
+                {% endif %}
+                <button class="taskDelete" name="taskDelete" formnovalidate="" type="submit"
+                    onclick="$('input#sublist').click();"><i class="fa fa-trash-o icon"></i>Delete Tasks</button>
+                {% if show_premium_message %}
+                    <p>It appears you have run out of available todo slots:</p>
+                    <a href="{% url 'create' %}" class="taskAdd"><i class="fa fa-plus icon"></i>Buy Premium!</a> 
+                {% endif %}
+            </div>
         </form>
     </div><!-- content -->
 </div><!-- container -->

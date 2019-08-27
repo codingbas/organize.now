@@ -5,6 +5,32 @@
 {% block page_heading %}{{ user }}'s Profile{% endblock %} 
 
 {% block content %}
-<p>{{ user.email }}</p>
-<p>{{ user.userprofile.is_premium }}</p>
+
+<div class="col-md-9">
+        <div class="profile-info">
+            <p>
+                <strong>Username: </strong> {{ user.username }}
+            </p>
+            <p><strong>Email: </strong> {{ user.email }}</p>
+            <p>
+                <strong>Premium: </strong> 
+                {% if user.userprofile.is_premium %}
+                    Ja
+                {% else %}
+                    Nee
+                {% endif %}
+            </p>
+            {% if i.description != None %}
+            <p><strong>Description: </strong> {{ i.description }}</p>
+            {% else %}
+            <p><strong>Description: </strong> None</p>
+            {% endif %}
+
+            <p><strong>Account Type: </strong> {{ i.account }}</p>
+            <p><strong>Current ToDo's: </strong> {{ todos_count }}</p>
+            <hr />
+            <a href="" class="btn btn-default custom-button edit-options-button"><i class="material-icons page-icon left"></i>EDIT</a> {% if i.account == 'free' %}
+            <a href="" class="btn btn-default custom-button new-save-button"><i class="material-icons page-icon left">euro</i> Buy Premium Version</a> {% endif %} 
+        </div>
+    </div>
 {% endblock %}
