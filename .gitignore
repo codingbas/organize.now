@@ -1,8 +1,8 @@
 *.requirements.txt/
 env.py
 db.sqlite3
-__pycache__/
-*/__pycache__/*
+__pycache__
+
 env.py
 env
-.c9/
+.c9
