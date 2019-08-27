@@ -15,7 +15,8 @@
                     <strong>Username: </strong> {{ user.username }}
                 </p>
                 <p>
-                    <strong>Email: </strong> {{ user.email }}</p>
+                    <strong>Email: </strong> {{ user.email }}
+                </p>
                 <p>
                     <strong>Premium: </strong> 
                     {% if user.userprofile.is_premium %}
@@ -24,8 +25,9 @@
                     Nee
                     {% endif %}
                 </p>
-                <p
-                <strong>Current ToDo's:</strong> {{ todos_count }}</p>
+                <p>
+                    <strong>Current ToDo's:</strong> {{ todos_count }}
+                </p>
                 <br>
                 {% if user.userprofile.is_premium == False %}
                 <a href="{% url 'create' %}" class="taskAdd"><i class="fa fa-plus icon"></i>Buy Premium!</a>
