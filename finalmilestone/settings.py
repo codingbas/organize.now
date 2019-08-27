@@ -23,10 +23,9 @@ BASE_DIR = os.path.dirname(os.path.dirname(os.path.abspath(__file__)))
 SECRET_KEY = os.environ.get('SECRET_KEY')
 
 # SECURITY WARNING: don't run with debug turned on in production!
-DEBUG = True
+DEBUG = False
 
 ALLOWED_HOSTS = ['56330d9b4b6248a68260016318abe668.vfs.cloud9.us-east-1.amazonaws.com','organizenow.herokuapp.com']
-
 
 # Application definition
 
@@ -77,17 +76,6 @@ TEMPLATES = [
 ]
 
 WSGI_APPLICATION = 'finalmilestone.wsgi.application'
-
-
-# Database
-# https://docs.djangoproject.com/en/1.11/ref/settings/#databases
-
-# DATABASES = {
-#    'default': {
-#        'ENGINE': 'django.db.backends.sqlite3',
-#       'NAME': os.path.join(BASE_DIR, 'db.sqlite3'),
-#   }
-#}
 
 if "DATABASE_URL" in os.environ:
     DATABASES = {
@@ -165,7 +153,6 @@ MEDIA_URL = '/media/'
 
 # Simplified static file serving.
 # https://warehouse.python.org/project/whitenoise/
-
 STATICFILES_STORAGE = 'whitenoise.storage.CompressedManifestStaticFilesStorage'
 
 # Stripe
