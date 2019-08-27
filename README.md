@@ -142,9 +142,9 @@ A few examples I came accross:
     4.
 
 # Deployment
-## To run this locally
-1. Create a new workspace in C9 with a workspace name and description.
-2. Create a virtual environment with wget -q https://git.io/v77xs -O /tmp/setup-workspace.sh && source /tmp/setup-workspace.sh.
+To run this locally:
+1. Create a new workspace in AWS Cloud9 or VSCode with a workspace name and description.
+2. Create a virtual environment
 3. Activate this virtual environment with mkvirtualenv [name of virtual environment].
 4. Install requirements with pip3 install -r requirements.txt.
 5. Create an env.py file with the following:
