@@ -135,11 +135,14 @@ For Continuous Integration I used Travis which constantly tests my app every tim
 ## Bugs
 A lot of bugs have been solved and committed to GitHub every time.
 A few examples I came accross:
-    1. Checkout didn't work for a long time. Got the message 'API key is not working'. Looked on Google for the answers and finally installed a easy Stripe checkout with security and less fields to fill in. 
+1. Checkout didn't work for a long time. Got the message 'API key is not working'. Looked on Google for the answers and finally installed a easy Stripe checkout with security and less fields to fill in. 
     Also in my code I had to change to secret key and the publishable key and how they connect.
-    2. User in trial mode could make more then 10 todo's. Had to fix the issue in count().
-    3. The reset password didnt work. User didnt get an email to reset their password. Took me a while but the restrictions on the Gmail account weren't set properly.
-    4.
+2. User in trial mode could make more then 10 todo's. Had to fix the issue in count().
+3. The reset password didnt work. User didnt get an email to reset their password. Took me a while but the restrictions on the Gmail account weren't set properly.
+4. The cart function i deleted because the user only buys 1 product: premium. Took me a long tim to change that.
+5. Deployment to Heroku didnt went very well. Had to fix quit a lot of issues. 
+6. The app on Heroku didnt work for a long time. Had to do migrate and makemigrations and restart all dynos to get it working.
+7. For quit a long i didnt know i had to create a new superuser for database Heroku. 
 
 # Deployment
 To run this locally:
