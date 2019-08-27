@@ -60,22 +60,22 @@ Wireframes:
 
 # Technologies Used
 * HTML
-This project uses HTML to build the foundation of the web application and includes links to Bootstrap 4, Bootstrap JS, CSS, and Font Awesome.
+    - This project uses HTML to build the foundation of the web application and includes links to Bootstrap 4, Bootstrap JS, CSS, and Font Awesome.
 * CSS
-This project uses CSS to style the features of the web application, including the header, footer and each page of the issue tracker. It is also used to modify Bootstrap 4 styles.
+    - This project uses CSS to style the features of the web application, including the header, footer and each page of the issue tracker. It is also used to modify Bootstrap 4 styles.
 * JavaScript
-This project uses JavaScript to provide the functionality for the Stripe API and for the back-to-top button.
+    - This project uses JavaScript to provide the functionality for the Stripe API and for the back-to-top button.
 * Python
-This project uses Python to provide the backend functionality of the issue tracker, including functions to report bugs and request features.
+    - This project uses Python to provide the backend functionality of the issue tracker, including functions to report bugs and request features.
 * Django
-This project uses Django, a high-level Python Web framework that encourages rapid development and clean, pragmatic design.
+    - This project uses Django, a high-level Python Web framework that encourages rapid development and clean, pragmatic design.
 * Stripe
-This project uses the Stripe payment API, providing a secure payment form for the application.
+    - This project uses the Stripe payment API, providing a secure payment form for the application.
 * JQuery
-The project uses JQuery to simplify DOM manipulation.
+    - The project uses JQuery to simplify DOM manipulation.
 * Font Awesome
-This project uses Font Awesome to provide icons for the application.
+    - This project uses Font Awesome to provide icons for the application.
 * WhiteNoise
-This project uses WhiteNoise to hose the staticfiles for Heroku. It provides radically simplified static file serving for Python web apps.
+    - This project uses WhiteNoise to hose the staticfiles for Heroku. It provides radically simplified static file serving for Python web apps.
 * Balsamiq Mockups 3
-This project uses Balsamiq Mockups 3 for the Skeleton and Surface Plan, providing views of the web application.
+    - This project uses Balsamiq Mockups 3 for the Skeleton and Surface Plan, providing views of the web application.
