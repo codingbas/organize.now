@@ -7,21 +7,22 @@
 {% block page_heading %}User Login{% endblock %}
 
 {% block content %}
-<div class="container-fluid">
+
 <div class="row">
-    <div class="col-md-12 text-center dashboard-heading">
-        <p>The smart app for busy people. Your life deserves this.</p>
-        <!-- Checking if user has a premium account -->
-        {% if user.userprofile.is_premium  %}
-            <p>Welcome <a href="{% url 'profile' %}" title="View your Profile">{{ user.username }}</a>, you have a premium account</p>
-        {% else %}
-            <p>Welcome <a href="{% url 'profile' %}" title="View your Profile">{{ user.username }}</a>, this is your trial version with a maximum of 10 Todo's. You can buy the premium for unlimited Todo's</p>
-        {% endif %}
+    <div class="col-md-12 text-center">
+        <div class="alert alert-success">
+            <p>The smart app for busy people. Your life deserves this.</p>
+            <!-- Checking if user has a premium account -->
+            {% if user.userprofile.is_premium  %}
+                <p>Welcome <a href="{% url 'profile' %}" title="View your Profile">{{ user.username }}</a>, you have a premium account</p>
+            {% else %}
+                <p>Welcome <a href="{% url 'profile' %}" title="View your Profile">{{ user.username }}</a>, this is your trial version with a maximum of 10 Todo's. You can buy the premium for unlimited Todo's</p>
+            {% endif %}
+        </div>
     </div>
 </div>
-</div>
 <br>
-<div class="container todo-prefix">
+<div class="todo-prefix">
     <div class="content">
         <h1>Organize.now</h1>
         <p class="tagline">a todo app</p>
@@ -60,7 +61,7 @@
                 <label for="category">Category</label>
             </div>
             <div class="inputContainer half last right">
-                <input type="date" id="dueDate" class="taskDate" name="date">
+                <input type="date" id="dueDate" class="taskDate" name="date" value="{{ today }}">
                 <label for="dueDate">Due Date</label>
             </div>
             <div class="row">
