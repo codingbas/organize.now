@@ -7,17 +7,18 @@
 {% block page_heading %}User Login{% endblock %}
 
 {% block content %}
-
+<div class="container-fluid">
 <div class="row">
     <div class="col-md-12 text-center dashboard-heading">
         <p>The smart app for busy people. Your life deserves this.</p>
         <!-- Checking if user has a premium account -->
         {% if user.userprofile.is_premium  %}
-            <p>Welcome <a href="{% url 'profile' %}" title="View your Profile">{{ user.username }}</a> you have a premium account</p>
+            <p>Welcome <a href="{% url 'profile' %}" title="View your Profile">{{ user.username }}</a>, you have a premium account</p>
         {% else %}
-            <p>Welcome <a href="{% url 'profile' %}" title="View your Profile">{{ user.username }}</a> this is your trial version. You can make a total of 10 Todo's. You can buy the premium version for unlimited Todo's</p>
+            <p>Welcome <a href="{% url 'profile' %}" title="View your Profile">{{ user.username }}</a>, this is your trial version with a maximum of 10 Todo's. You can buy the premium for unlimited Todo's</p>
         {% endif %}
     </div>
+</div>
 </div>
 <br>
 <div class="container todo-prefix">
@@ -27,7 +28,23 @@
         <form action="" method="post">
             {% csrf_token %}
             <!-- csrf token for basic security -->
-            <div class="inputContainer">
+            
+           
+            <ul class="taskList">
+                {% for todo in todos %}
+                <!-- django template lang - for loop -->
+                <li class="taskItem">
+                    <input type="checkbox" class="taskCheckbox" name="checkedbox" id="{{ todo.id }}"
+                        value="{{ todo.id }}">
+                    <label for="{{ todo.id }}"><span class="complete-">{{ todo.title }}</span></label>
+                    <span class="category-{{ todo.category }}">{{ todo.category }}</span>
+                    <strong class="taskDate"><i class="fa fa-calendar"></i>{{ todo.created }} -
+                        {{ todo.due_date }}</strong>
+                </li>
+                {% endfor %}
+                
+            </ul><!-- taskList -->
+               <div class="inputContainer">
                 <input type="text" id="description" class="taskName" placeholder="What do you need to do?"
                     name="description" required>
                 <label for="description">Description</label>
@@ -46,28 +63,14 @@
                 <input type="date" id="dueDate" class="taskDate" name="date">
                 <label for="dueDate">Due Date</label>
             </div>
-            <ul class="taskList">
-                {% for todo in todos %}
-                <!-- django template lang - for loop -->
-                <li class="taskItem">
-                    <input type="checkbox" class="taskCheckbox" name="checkedbox" id="{{ todo.id }}"
-                        value="{{ todo.id }}">
-                    <label for="{{ todo.id }}"><span class="complete-">{{ todo.title }}</span></label>
-                    <span class="category-{{ todo.category }}">{{ todo.category }}</span>
-                    <strong class="taskDate"><i class="fa fa-calendar"></i>{{ todo.created }} -
-                        {{ todo.due_date }}</strong>
-                </li>
-                {% endfor %}
-                
-            </ul><!-- taskList -->
-                        <div class="row">
+            <div class="row">
                 {% if show_premium_message == False %}
-                    <button class="taskAdd" name="taskAdd" type="submit"><i class="fa fa-plus icon"></i>Add task</button>
+                    <button class="taskAdd" name="taskAdd" type="submit"><i class="fa fa-plus icon"></i>Add ToDo</button>
                 {% endif %}
                 <button class="taskDelete" name="taskDelete" formnovalidate="" type="submit"
-                    onclick="$('input#sublist').click();"><i class="fa fa-trash-o icon"></i>Delete Tasks</button>
+                    onclick="$('input#sublist').click();"><i class="fa fa-trash-o icon"></i>Delete ToDo</button>
                 {% if show_premium_message %}
-                    <p>It appears you have run out of available todo slots:</p>
+                    <p>It appears you have run out of your 10 todo's. Click on the button to buy Premium and unlimited ToDo's</p>
                     <a href="{% url 'create' %}" class="taskAdd"><i class="fa fa-plus icon"></i>Buy Premium!</a> 
                 {% endif %}
             </div>
