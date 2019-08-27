@@ -27,3 +27,55 @@ Real Life User Stories:
 Wireframes:
 
 * Wireframes have been created using Balsamiq Mockups 3. These can be viewed in ......
+
+# Features
+* Login/Register form - this will allow the user to either log into an existing account or create a new account, inserting them into the database.
+* Password reset - this will allow the user to choose a different password when its lost or for security reasons.
+* Add Todo - this will add a Todo to the list of Todo's.
+* Delete Todo - this will delete an existing Todo.
+* Buy Premium - This will allow the user to go for unlimited Todo's.
+* Trial version - This is for free and will allow the user to make a maximum of 10 Todo's.
+* Max 10 todod's - A warning comes up when a free trial user wants to make their 11th Todo.
+* But Premium - This will allow the user to buy a premium version with Stripe and their creditcard. Inserting them in the database. 
+* Profile - This will allow the user to see their own made profile whom is inserted in the database. 
+
+## Existing Features
+* Login/Register form - allows User 1 to have their username as 'USER1' and also their own password.
+* Add Todo - allows trial user to make a maximum of 10 Todo's.
+* Add Todo Premium - allows trial user to make unlimited Todo's.
+* Stripe - allows user to pay 30 euro for the Premium version.
+* Trial user and Premium user - user is premium then unlimited todo's.
+* Log out - allows signed up user to log out after using the application (if they wish).
+* Reset password - user will get an email with a link to reset their password. 
+
+## Features Left to Implement
+* Unlimited sharing - share your Todo's on different platforms and connect with Google Agenda.
+* Add subcategories and priority to a Todo.
+* Newsletter Subscription - there could be a newsletter subscription to keep users motivated and using the Todo app.
+* Give your tags a color
+* Advanced sorting todos
+* Connect with Dropbox and Google Drive
+* On your watch with Apple Watch
+* Synch with Microsoft Outlook
+
+# Technologies Used
+* HTML
+This project uses HTML to build the foundation of the web application and includes links to Bootstrap 4, Bootstrap JS, CSS, and Font Awesome.
+* CSS
+This project uses CSS to style the features of the web application, including the header, footer and each page of the issue tracker. It is also used to modify Bootstrap 4 styles.
+* JavaScript
+This project uses JavaScript to provide the functionality for the Stripe API and for the back-to-top button.
+* Python
+This project uses Python to provide the backend functionality of the issue tracker, including functions to report bugs and request features.
+* Django
+This project uses Django, a high-level Python Web framework that encourages rapid development and clean, pragmatic design.
+* Stripe
+This project uses the Stripe payment API, providing a secure payment form for the application.
+* JQuery
+The project uses JQuery to simplify DOM manipulation.
+* Font Awesome
+This project uses Font Awesome to provide icons for the application.
+* WhiteNoise
+This project uses WhiteNoise to hose the staticfiles for Heroku. It provides radically simplified static file serving for Python web apps.
+* Balsamiq Mockups 3
+This project uses Balsamiq Mockups 3 for the Skeleton and Surface Plan, providing views of the web application.

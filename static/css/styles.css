@@ -94,6 +94,8 @@ a
 }
 /* super basic grid structure */
 .todo-prefix .container {
+    position: relative;
+    min-height: 100%;
     width: 600px;
     margin: 0 auto;
     background: #ffffff;
@@ -246,6 +248,7 @@ a
     background: #06f37f;
     padding-left: 31px;
 }
+
 .todo-prefix .taskAdd:hover {
     background: #303030;
 }
@@ -324,15 +327,18 @@ a
 .todo-prefix .category-Other {
     background: #d35400;
 }
-.todo-prefix footer {
+.todo-prefix .footer {
     text-align: center;
     font-size: 11px;
     font-weight: 600;
     text-transform: uppercase;
     color: #777;
+     
+    
 }
-.todo-prefix footer a {
+.todo-prefix .footer a {
     color: #f39c12;
+   
 }
 /* custom checkboxes */
 .todo-prefix .taskCheckbox {
@@ -402,3 +408,4 @@ a
     padding: 15px;
     border-radius: 4px;
 }
+
