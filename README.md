@@ -129,6 +129,9 @@ This website has been tested on different device screen sizes using Google Chrom
 ## Code Validation
 HTML code has been passed through the official W3 Validator. Errors within the code have been corrected. CSS code has been passed through the official W3 Validator.
 
+## Continuous Integration
+For Continuous Integration I used Travis which constantly tests my app every time I push a new change to github
+
 ## Bugs
 A lot of bugs have been solved and committed to GitHub every time.
 A few examples I came accross:
