@@ -37,15 +37,15 @@
                     {% if user.is_authenticated %}
                         <li><a href="{% url 'profile' %}">{{ user.username }}</a></li>
                         <li><a href="{% url 'logout' %}">Log Out</a></li>
+                        <li><a href="{% url 'index' %}">Todos</a></li>
+                        {% if user.userprofile.is_premium == False %}
+                            <li><a href="{% url 'create' %}"><i class="fa fa-shipping-cart"></i>Buy Premium</a></li>
+                        {% endif %}
                     {%  else %}
                         <li><a href="{% url 'registration' %}">Register</a></li>
                         <li><a href="{% url 'login' %}">Log In</a></li>
                     {% endif %}
-                        <li>
-                            <a href="{% url 'create' %}">
-                                <i class="fa fa-shipping-cart"></i>Buy Premium
-                            </a>
-                        </li>
+
                     </ul>
                 </div>
             </div>
