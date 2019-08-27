@@ -4,6 +4,8 @@ A digital To Do list to help your life get more organized!
 
 [![Build Status](https://travis-ci.org/codingbas/organize.now.svg?branch=master)](https://travis-ci.org/codingbas/organize.now)
 
+See deployed version here:
+
 ## UX 
 This web application is a simple ToDo app made in Django. You can have a trial version where you can make 10 ToDo's. When you buy the premium version you have unlimited ToDo's. It is designed to allow users to make any todo what they normally write down on paper. You will have the user whom wants to use the trial version and make sure the 10 ToDo's are finished on time. 
 The premium user will have all their ToDo's online to have a great overview what to do per day, week or month. 
@@ -186,6 +188,9 @@ To deploy this application with Heroku:
 16. In settings.py, comment out import env and set DEBUG = False.
 17. In Heroku, go to Deploy and select GitHub as a deployment method. Find your repository. Manually deploy the master branch. Activate automatic deploys.
 18. Add the deployed Heroku link to ALLOWED_HOSTS in settings.py and git push origin master. The Heroku app should now be working.
+
+Deployed version here: 
+
 
 ## Development vs Deployed Version
 In the development version, Debug is set to True and the env.py file is imported into settings.py. However, in the deployed version, Debug is set to False and env.py is commented out. Also, the env.py file is not pushed to GitHub or Heroku as this contains keys which need to remain hidden from other users. The deployed version uses Heroku's PostgreSQL database whereas the development version uses SQLite.
