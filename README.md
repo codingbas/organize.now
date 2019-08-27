@@ -59,23 +59,133 @@ Wireframes:
 * Synch with Microsoft Outlook
 
 # Technologies Used
-* HTML
-    - This project uses HTML to build the foundation of the web application and includes links to Bootstrap 4, Bootstrap JS, CSS, and Font Awesome.
-* CSS
+* [HTML5](https://www.w3schools.com/html/html5_intro.asp)
+    - This project uses HTML to build the foundation of the web application and includes links to Bootstrap 3, Bootstrap JS, CSS, and Font Awesome.
+* [CSS](https://www.w3schools.com/css/)
     - This project uses CSS to style the features of the web application, including the header, footer and each page of the issue tracker. It is also used to modify Bootstrap 4 styles.
-* JavaScript
+* [Javascript](https://www.w3schools.com/js/)
     - This project uses JavaScript to provide the functionality for the Stripe API and for the back-to-top button.
-* Python
+* [Python](https://www.python.org/)
     - This project uses Python to provide the backend functionality of the issue tracker, including functions to report bugs and request features.
-* Django
+* [Django](https://www.djangoproject.com/)
     - This project uses Django, a high-level Python Web framework that encourages rapid development and clean, pragmatic design.
-* Stripe
+* [Stripe](https://stripe.com/en-nl)
     - This project uses the Stripe payment API, providing a secure payment form for the application.
-* JQuery
+* [JQuery](https://jquery.com/)
     - The project uses JQuery to simplify DOM manipulation.
-* Font Awesome
+* [Font Awesome](https://fontawesome.com/)
     - This project uses Font Awesome to provide icons for the application.
-* WhiteNoise
+* [WhiteNoise](http://whitenoise.evans.io/en/stable/)
     - This project uses WhiteNoise to hose the staticfiles for Heroku. It provides radically simplified static file serving for Python web apps.
-* Balsamiq Mockups 3
+* [Balsamiq Mockups 3](https://balsamiq.com/wireframes/desktop/)
     - This project uses Balsamiq Mockups 3 for the Skeleton and Surface Plan, providing views of the web application.
+
+# Testing
+
+## Manual Testing
+Below are scenarios which a user may experience while navigating the website. These have been used to manually test the application's features.
+
+* Log in
+    1.Click on 'Log in' in navigation bar
+    2.Fill in your username and password
+    3.Be presented with the message 'you have successfully logged in'
+* Register
+    1. Click on 'Register' button in the navigation bar
+    2. Fill in the required fields
+    3. Click on register button
+    4. User has now a profile
+    5. Be presented with the message 'you have successfully registered'
+* Log out
+    1. When a user clicks on 'Log out' when logged in in the navigation bar
+    2. A message 'you have successfully logged out' will appear
+* Profile
+    1. Click on 'Profile' button in the navigation bar
+    2. User can see his or her own Profile
+    3. User can see if he or she is a premium member or not
+    4. If a trial member user has the option the click on buy premium button
+* Buy Premium
+    1. Click on 'Buy Premium' button in the navigation bar
+    2. User will then go to checkout url and be able to press button to buy
+    3. User will have to fill in their emailaddress and cc information. Also their telephonenumber for security reasons.
+    4. When they click on buy, the button will turn green and will go to premium
+* Reset password
+    1. When user wants to change their password or dont remember theirs then they can click on 'reset password'
+    2. A message with 'Please specify your email address to receive instructions for resetting it' will appear.
+    3. Then fill in the emailaddress you have chosen for your account and press 'reset password'
+    4. The user will get a unique link in their emailaddress to change their password
+* To Do trial version
+    1. When user wants to make 11th todo a message appears 'It appears you have run out of your 10 todo's. Click on the button to buy Premium and unlimited ToDo's'
+    2. Under that message is a button 'buy premium' to buy a premium version with unlimited todo's.
+* Github page of codingbas
+    1. When a user wants to see my Github page they can click in the footer on the Github icon.
+* Back to top button
+    1. Scroll down on the page of todo's or on your mobile and back to top btn appears
+    2. A button on the bottom right should appear
+    3. When a user clicks on this button he or she returns to the top of the page
+
+## Responsive Testing
+This website has been tested on different device screen sizes using Google Chrome Developer Tools and Mozilla Firefox Developer Tools. Minor bugs have been fixed as a result of this testing and I can confirm that this website functions responsively on all device screen sizes.
+
+## Code Validation
+HTML code has been passed through the official W3 Validator. Errors within the code have been corrected. CSS code has been passed through the official W3 Validator.
+
+## Bugs
+A lot of bugs have been solved and committed to GitHub every time.
+A few examples I came accross:
+    1. Checkout didn't work for a long time. Got the message 'API key is not working'. Looked on Google for the answers and finally installed a easy Stripe checkout with security and less fields to fill in. 
+    Also in my code I had to change to secret key and the publishable key and how they connect.
+    2. User in trial mode could make more then 10 todo's. Had to fix the issue in count().
+    3. The reset password didnt work. User didnt get an email to reset their password. Took me a while but the restrictions on the Gmail account weren't set properly.
+    4.
+
+# Deployment
+## To run this locally
+1. Create a new workspace in C9 with a workspace name and description.
+2. Create a virtual environment with wget -q https://git.io/v77xs -O /tmp/setup-workspace.sh && source /tmp/setup-workspace.sh.
+3. Activate this virtual environment with mkvirtualenv [name of virtual environment].
+4. Install requirements with pip3 install -r requirements.txt.
+5. Create an env.py file with the following:
+6. import os
+
+os.environ.setdefault('STRIPE_PUBLISHABLE', "")
+os.environ.setdefault('STRIPE_SECRET', "")
+os.environ.setdefault('SECRET_KEY', '')
+os.environ.setdefault('DATABASE_URL', '')
+
+7. Make sure you uncomment #import env in settings.py.
+8. You will need to generate your own SECRETKEY. You will need to set up a Stripe account and use their testing API keys. Once you have a database set up (you can use Postgres for database on Heroku) you can uncomment os.environ.setdefault('DATABASE_URL', '') and use the key that PostgreSQL generates for you in Heroku's Config Vars.
+9. Make migrations with python3 manage.py makemigrations.
+10. Migrate with python3 manage.py migrate.
+11. Create a super user with python3 manage.py createsuperuser and follow instructions in your terminal.
+12. To run the application locally, type in python3 manage.py runserver $IP:$C9_PORT.
+
+## Heroku
+To deploy this application with Heroku:
+
+1. Initialise a repository in the workspace with git init.
+2. Create a repository on GitHub and type git remote add origin https://github.com/[github username]/[repo name].git into the terminal.
+3. Use git status to outline all staged and unstaged files. Use git add to stage all files.
+4. Add env.py to .gitignore with echo env.py >> .gitignore so that secret keys are not pushed to GitHub or Heroku.
+5. Use git commit -m [message] to commit changes.
+6. Use git push -u origin master to push these changes to GitHub.
+7. Log into Heroku and Create New App. Create a unique name and region (USA or Europe, whichever is closest to you).
+8. Navigate to Resources and search for 'PostgreSQL' - choose 'Hobby Dev - Free' and select 'Provision'. 
+9. Go to Settings and Reveal Config Vars - copy and paste the SECRETKEY, STRIPEPUBLISHABLE and STRIPESECRET into the fields.
+10. In env.py, uncomment DATABASE_URL and use the key generated from PostgreSQL in Heroku's Config Vars.
+11. In Config Vars, add DISABLE_COLLECTSTATIC = 1.
+12. Run python3 manage.py makemigrations and python3 manage.py migrate.
+13. Create a new super user for the production database with python3 manage.py createsuperuser and follow instructions in the terminal.
+14. pip3 freeze > requirements.txt to make sure requirements.txt is up to date. 
+15. Create a Procfile and add web: gunicorn finalmilestone.wsgi:application
+16. In settings.py, comment out import env and set DEBUG = False.
+17. In Heroku, go to Deploy and select GitHub as a deployment method. Find your repository. Manually deploy the master branch. Activate automatic deploys.
+18. Add the deployed Heroku link to ALLOWED_HOSTS in settings.py and git push origin master. The Heroku app should now be working.
+
+## Development vs Deployed Version
+In the development version, Debug is set to True and the env.py file is imported into settings.py. However, in the deployed version, Debug is set to False and env.py is commented out. Also, the env.py file is not pushed to GitHub or Heroku as this contains keys which need to remain hidden from other users. The deployed version uses Heroku's PostgreSQL database whereas the development version uses SQLite.
+
+# Credits
+The accounts app i used came from the lessons of Code Institue. This app includes the functionality for logging in and registering a user into the database. The checkout of Stripe i used is from [stripe checkout](https://testdriven.io/blog/django-stripe-tutorial/). In my opinion very easy to use. 
+The simple ToDo app is used comes from [simple Django ToDo app](https://medium.com/fbdevclagos/how-to-build-a-todo-app-with-django-17afdc4a8f8c). Also i want to give my credits to a senior developer called Luigi van der Pal, he helped me a lot during this milestone.
+Also many thanks for the tutors. I have used the Tutoring a lot during this milestone and they were really helpful. 
+
