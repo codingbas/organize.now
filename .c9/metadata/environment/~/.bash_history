@@ -1,1 +1,0 @@
-{"filter":false,"title":".bash_history","tooltip":"~/.bash_history","ace":{},"undoManager":{"mark":-1,"position":-1,"stack":[]},"timestamp":1565688570240,"hash":"ff7a9bb701ea52b268a16b5bfa253a853b6e8035"}

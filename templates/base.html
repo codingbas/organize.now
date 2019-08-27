@@ -35,7 +35,7 @@
                 <div class="container">
                 <ul class="nav navbar-nav navbar-right">
                     {% if user.is_authenticated %}
-                        <li><a href="{% url 'profile' %}">Profile</a></li>
+                        <li><a href="{% url 'profile' %}">{{ user.username }}</a></li>
                         <li><a href="{% url 'logout' %}">Log Out</a></li>
                     {%  else %}
                         <li><a href="{% url 'registration' %}">Register</a></li>
@@ -51,20 +51,18 @@
             </div>
         </div>
     </nav>
-    {% if messages %}
-        <div class="alert alert-success">
-            <div class="messages">
-                {% for message in messages %}
-                    {{ message }}
-                {% endfor %}
+    <div class="container">
+        {% if messages %}
+            <div class="alert alert-success">
+                <div class="messages">
+                    {% for message in messages %}
+                        {{ message }}
+                    {% endfor %}
+                </div>
             </div>
-        </div>
-    {% endif %}
-    
-   <div class="container">
-        
-    {% block content %} {% endblock %}
-    
+        {% endif %}
+        {% block content %} {% endblock %}
+    </div>
     <!-- Back to top -->
     <button id="js-back-to-top" class="hidden back-to-top" title="Go to top"><i class="fas fa-angle-up"></i></button>
 
