@@ -6,9 +6,13 @@ A digital To Do list to help your life get more organized!
 
 To deploy this application with Heroku, click [here](https://organizenow.herokuapp.com)
 
+Testpayment for Premium membership can be done with:
+* 4242 4242 4242 4242
+* CCV: 111
+
 ## UX 
-This web application is a simple ToDo app made in Django. You can have a trial version where you can make 10 ToDo's. When you buy the premium version you have unlimited ToDo's. It is designed to allow users to make any todo what they normally write down on paper. You will have the user whom wants to use the trial version and make sure the 10 ToDo's are finished on time. 
-The premium user will have all their ToDo's online to have a great overview what to do per day, week or month. 
+This web application is a simple Todo app made in Django. You can have a trial version where you can make 10 Todos. When you buy the premium version you have unlimited Todos. It is designed to allow users to make any todo what they normally write down on paper. You will have the user whom wants to use the trial version and make sure the 10 Todos are finished on time. 
+The premium user will have all their Todos online to have a great overview what to do per day, week or month. 
 
 General User Stories:
 
@@ -33,25 +37,25 @@ Wireframes:
 # Features
 * Login/Register form - this will allow the user to either log into an existing account or create a new account, inserting them into the database.
 * Password reset - this will allow the user to choose a different password when its lost or for security reasons.
-* Add Todo - this will add a Todo to the list of Todo's.
+* Add Todo - this will add a Todo to the list of Todos.
 * Delete Todo - this will delete an existing Todo.
-* Buy Premium - This will allow the user to go for unlimited Todo's.
-* Trial version - This is for free and will allow the user to make a maximum of 10 Todo's.
+* Buy Premium - This will allow the user to go for unlimited Todos.
+* Trial version - This is for free and will allow the user to make a maximum of 10 Todos.
 * Max 10 todod's - A warning comes up when a free trial user wants to make their 11th Todo.
 * But Premium - This will allow the user to buy a premium version with Stripe and their creditcard. Inserting them in the database. 
 * Profile - This will allow the user to see their own made profile whom is inserted in the database. 
 
 ## Existing Features
 * Login/Register form - allows User 1 to have their username as 'USER1' and also their own password.
-* Add Todo - allows trial user to make a maximum of 10 Todo's.
-* Add Todo Premium - allows trial user to make unlimited Todo's.
+* Add Todo - allows trial user to make a maximum of 10 Todos.
+* Add Todo Premium - allows trial user to make unlimited Todos.
 * Stripe - allows user to pay 30 euro for the Premium version.
-* Trial user and Premium user - user is premium then unlimited todo's.
+* Trial user and Premium user - user is premium then unlimited todos.
 * Log out - allows signed up user to log out after using the application (if they wish).
 * Reset password - user will get an email with a link to reset their password. 
 
 ## Features Left to Implement
-* Unlimited sharing - share your Todo's on different platforms and connect with Google Agenda.
+* Unlimited sharing - share your Todos on different platforms and connect with Google Agenda.
 * Add subcategories and priority to a Todo.
 * Newsletter Subscription - there could be a newsletter subscription to keep users motivated and using the Todo app.
 * Give your tags a color
@@ -116,7 +120,7 @@ Below are scenarios which a user may experience while navigating the website. Th
     3. Then fill in the emailaddress you have chosen for your account and press 'reset password'
     4. The user will get a unique link in their emailaddress to change their password
 * To Do trial version
-    1. When user wants to make 11th todo a message appears 'It appears you have run out of your 10 todo's. Click on the button to buy Premium and unlimited ToDo's'
+    1. When user wants to make 11th todo a message appears 'It appears you have run out of your 10 todos. Click on the button to buy Premium and unlimited ToDos'
     2. Under that message is a button 'buy premium' to buy a premium version with unlimited todo's.
 * Github page of codingbas
     1. When a user wants to see my Github page they can click in the footer on the Github icon.
