@@ -3,7 +3,9 @@
 {% load bootstrap_tags %}
 
 {% block content %}
-    <h2>Buy Premium for only €30.00. You will get unlimited Todos in this app. This will be the start of a structured and well-organized life:).</h2>
+<div class="alert alert-success">
+    <h2>Buy Premium for only €30.00 </h2>
+    <p>You will get unlimited Todos in this app. This will be the start of a structured and well-organized life:) </p>
     <form action="{% url 'charge' %}" method="post">
         {% csrf_token %}
         <script src="https://checkout.stripe.com/checkout.js" class="stripe-button"
@@ -13,4 +15,5 @@
               data-currency="eur"
               data-locale="auto"></script>
     </form>
+</div>
 {% endblock %}
