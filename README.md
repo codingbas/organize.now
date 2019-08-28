@@ -28,7 +28,7 @@ Real Life User Stories:
 
 Wireframes:
 
-* Wireframes have been created using Balsamiq Mockups 3. These can be viewed in ......
+* Wireframes have been created using Balsamiq Mockups 3. These can be viewed in 
 
 # Features
 * Login/Register form - this will allow the user to either log into an existing account or create a new account, inserting them into the database.
