@@ -4,7 +4,8 @@ A digital To Do list to help your life get more organized!
 
 [![Build Status](https://travis-ci.org/codingbas/organize.now.svg?branch=master)](https://travis-ci.org/codingbas/organize.now)
 
-To deploy this application with Heroku, click [here](https://organizenow.herokuapp.com)
+## Heroku
+To see this application live with Heroku, click [here](https://organizenow.herokuapp.com)
 
 ## UX 
 This web application is a simple Todo app made in Django. You can have a trial version where you can make 10 Todos. When you buy the premium version you have unlimited Todos. It is designed to allow users to make any todo what they normally write down on paper. You will have the user whom wants to use the trial version and make sure the 10 Todos are finished on time. 
@@ -59,6 +60,8 @@ Wireframes:
 * Connect with Dropbox and Google Drive
 * On your watch with Apple Watch
 * Synch with Microsoft Outlook
+* Change or update a Todo
+* Add funcion 'done' to a Todo
 
 # Technologies Used
 * [HTML5](https://www.w3schools.com/html/html5_intro.asp)
@@ -172,7 +175,7 @@ os.environ.setdefault('DATABASE_URL', '')
 12. To run the application locally, type in python3 manage.py runserver $IP:$C9_PORT.
 
 ## Heroku
-To deploy this application with Heroku, click [here](https://organizenow.herokuapp.com)
+To see this application live with Heroku, click [here](https://organizenow.herokuapp.com)
 
 1. Initialise a repository in the workspace with git init.
 2. Create a repository on GitHub and type git remote add origin https://github.com/[github username]/[repo name].git into the terminal.
