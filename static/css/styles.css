@@ -5,6 +5,9 @@ html {
     position: relative;
 }
 
+h2 {
+    font-family: 'Montserrat', sans-serif !important;
+}
 body {
     box-sizing: border-box;
     padding-top: 100px;
