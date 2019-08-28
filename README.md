@@ -196,8 +196,6 @@ To see this application live with Heroku, click [here](https://organizenow.herok
 17. In Heroku, go to Deploy and select GitHub as a deployment method. Find your repository. Manually deploy the master branch. Activate automatic deploys.
 18. Add the deployed Heroku link to ALLOWED_HOSTS in settings.py and git push origin master. The Heroku app should now be working.
 
-Deployed version here: 
-
 
 ## Development vs Deployed Version
 In the development version, Debug is set to True and the env.py file is imported into settings.py. However, in the deployed version, Debug is set to False and env.py is commented out. Also, the env.py file is not pushed to GitHub or Heroku as this contains keys which need to remain hidden from other users. The deployed version uses Heroku's PostgreSQL database whereas the development version uses SQLite.
