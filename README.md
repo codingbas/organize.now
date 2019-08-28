@@ -160,12 +160,12 @@ To run this locally:
 3. Activate this virtual environment with mkvirtualenv [name of virtual environment].
 4. Install requirements with pip3 install -r requirements.txt.
 5. Create an env.py file with the following:
-6. import os
+    - import os
 
-os.environ.setdefault('STRIPE_PUBLISHABLE', "")
-os.environ.setdefault('STRIPE_SECRET', "")
-os.environ.setdefault('SECRET_KEY', '')
-os.environ.setdefault('DATABASE_URL', '')
+        os.environ.setdefault('STRIPE_PUBLISHABLE', "")
+        os.environ.setdefault('STRIPE_SECRET', "")
+        os.environ.setdefault('SECRET_KEY', '')
+        os.environ.setdefault('DATABASE_URL', '')
 
 7. Make sure you uncomment #import env in settings.py.
 8. You will need to generate your own SECRETKEY. You will need to set up a Stripe account and use their testing API keys. Once you have a database set up (you can use Postgres for database on Heroku) you can uncomment os.environ.setdefault('DATABASE_URL', '') and use the key that PostgreSQL generates for you in Heroku's Config Vars.
