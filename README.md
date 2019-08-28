@@ -6,10 +6,6 @@ A digital To Do list to help your life get more organized!
 
 To deploy this application with Heroku, click [here](https://organizenow.herokuapp.com)
 
-Testpayment for Premium membership can be done with:
-* 4242 4242 4242 4242
-* CCV: 111
-
 ## UX 
 This web application is a simple Todo app made in Django. You can have a trial version where you can make 10 Todos. When you buy the premium version you have unlimited Todos. It is designed to allow users to make any todo what they normally write down on paper. You will have the user whom wants to use the trial version and make sure the 10 Todos are finished on time. 
 The premium user will have all their Todos online to have a great overview what to do per day, week or month. 
@@ -149,6 +145,10 @@ A few examples I came accross:
 5. Deployment to Heroku didnt went very well. Had to fix quit a lot of issues. 
 6. The app on Heroku didnt work for a long time. Had to do migrate and makemigrations and restart all dynos to get it working.
 7. For quit a long i didnt know i had to create a new superuser for database Heroku. 
+
+### Testpayment for Premium membership can be done with:
+* 4242 4242 4242 4242
+* CCV: 111
 
 # Deployment
 To run this locally:
